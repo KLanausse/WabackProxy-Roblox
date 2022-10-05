@@ -133,11 +133,11 @@ class Handler(socketserver.BaseRequestHandler):
 				split = archived_url.split('/')
 				hostname = split[2] = 'www.oocities.org'
 				request_url = '/'.join(split)
-			elif archived_url == 'http://www.roblox.com/Asset/CharacterFetch.ashx?userId=1&placeId=0':
+			elif archived_url.split('/')[-1] == 'CharacterFetch.ashx?userId=1&placeId=0':
 				# Apply GEOCITIES_FIX and pass it through.
 				_print('[>]', archived_url)
 
-				request_url = 'https://web.archive.org/web/20130609022415if_/http://www.roblox.com/Asset/CharacterFetch.ashx?userId=358230'
+				request_url = 'http://web.archive.org/web/20130609022415if_/http://www.roblox.com/Asset/CharacterFetch.ashx?userId=358230'
 			elif hostname == 'www.roblox.com' and archived_url.split('/')[3] == 'asset': # asset redirect
 				# Apply GEOCITIES_FIX and pass it through.
 				_print('[>]', archived_url)
